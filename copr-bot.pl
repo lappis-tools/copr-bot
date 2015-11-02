@@ -7,9 +7,8 @@ use Data::Dumper;
 
 package MyBot;
 use base qw( Bot::BasicBot );
-my @urls = ("http://localhost:5000", "api", "status");
-#my $channel = "#softwarepublico";
-my $channel = "#ccsl-usp";
+my @urls = ("http://164.41.86.13:5000", "api", "status");
+my $channel = "#softwarepublico";
 my $json = JSON->new->allow_nonref;
 
 sub said {
