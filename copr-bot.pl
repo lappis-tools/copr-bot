@@ -15,7 +15,7 @@ sub said {
   #TODO: when someone asks for a package version, call her name.
   my ($self, $message) = @_;
   if ($message->{body} =~ /!version (.*)/) {
-    my $response = LWP::Simple::get($urls[0].$urls[1]));
+    my $response = LWP::Simple::get($urls[0].$urls[1]);
     my $info = $json->decode($response);
     return $info->{$1}->{"git_version"};
   }
