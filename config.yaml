@@ -1,3 +1,4 @@
-BaseUrl: http://localhost:5000
+BaseUrl: http://lappis.unb.br/copr-status
 Channel: softwarepublico
+Nickname: spb_devops
 Tick: 3600
