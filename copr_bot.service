@@ -1,0 +1,11 @@
+[Unit]
+Description=Copr Status Bot
+After=network.target
+
+[Service]
+ExecStart=perl copr-bot.pl
+WorkingDirectory=path/to/copr-bot.pl
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
