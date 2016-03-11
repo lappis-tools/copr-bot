@@ -15,15 +15,16 @@ my $channel = "#".$config->{Channel};
 my $nickname = $config->{Nickname};
 my $json = JSON->new->allow_nonref;
 
-#sub said {
-  ##TODO: when someone asks for a package version, call her name.
-  #my ($self, $message) = @_;
-  #if ($message->{body} =~ /!version (.*)/) {
-    #my $response = LWP::Simple::get($urls[0].'/'.$urls[1]);
-    #my $info = $json->decode($response);
-    #return $info->{$1}->{"git"}->{"master"};
-  #}
-#}
+#FIXME: #this is broken on copr-status side
+sub said {
+  #TODO: when someone asks for a package version, call her name.
+  my ($self, $message) = @_;
+  if ($message->{body} =~ /!version (.*)/) {
+    my $response = LWP::Simple::get($urls[0].'/'.$urls[1]);
+    my $info = $json->decode($response);
+    return $info->{$1}->{"git"}->{"master"};
+  }
+}
 
 sub tick {
   my ($self) = @_;
